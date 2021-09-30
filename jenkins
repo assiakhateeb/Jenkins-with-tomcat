@@ -9,5 +9,10 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/jleetutorial/maven-project'
             }
         }
+        stage('Build'){
+            steps{
+                sh 'mvn package'
+            }
+        }
     } 
 }
