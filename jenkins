@@ -9,9 +9,14 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/jleetutorial/maven-project'
             }
         }
-        stage('Build'){
+        stage('build'){
             steps{
                 sh 'mvn package'
+            }
+        }
+        stage('archive artifacts'){
+            steps{
+            archiveArtifacts artifacts: '**/*.war', followSymlinks: false
             }
         }
     } 
