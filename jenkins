@@ -1,0 +1,9 @@
+pipeline {
+    stages {
+        stage('Clone GitHub Repositry') {
+            steps {
+                git branch: 'master', url: 'https://github.com/jleetutorial/maven-project'
+            }
+        }
+    } 
+}
